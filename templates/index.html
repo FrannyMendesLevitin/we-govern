@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block content %}
+
+<h1> select a county: </h1>
+
+{% for county in counties %} {{ county['countyDesc'] }}
+{% endfor %}
+{% endblock %}
