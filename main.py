@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 from flask import render_template, request
-from app import *
+from controllers.location import create_routes as location_routes
+from controllers.video import create_routes as video_routes
+from main import *
 app = Flask(__name__)
 
 import pprint 
@@ -21,22 +23,12 @@ def my_model():
 def my_view(data):
     return jsonify(data)
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
     @app.route('/test')
     def test():
         data = my_model()
         return my_view(data)
 
-
-    @app.route('/index')
-    def test2():
-        data = my_model()
-        return render_template('index.html', **data)
-
-
-
-
-
-
-
-    app.run()
+    location_routes(app)
+    video_routes(app)
+    app.run(debug=True)

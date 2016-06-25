@@ -4,29 +4,22 @@
     {% block head %}
     
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <title>Teach Me how to backpack</title>
+    <title>we govern</title>
    
     {% endblock %}
   </head>
   <body>
     {% block master %}
     <header id="header">
-     <span id="home"> 
-       <a href="{{ url_for('index') }}"><img src="/static/logo.png"></a>
-       <!-- <a href="{{ url_for('index') }}"><img style="vertical-align:middle" src="https://pixabay.com/static/uploads/photo/2014/04/03/00/36/backpack-308820_960_720.png" height="42" width="42"></a>
-        <a href="{{ url_for('index') }}">Teach me <br>how to Backpack</a> -->
-    </span>
-  
-        <ul>
-          <li {% if(active_page == 'search') %} class="active" {%endif%} ><a href="{{ url_for('search') }}">Search</a></li>
-          <li {% if(active_page == 'browse') %} class="active" {%endif%} ><a href="{{ url_for('index') }}">Browse Courses</a></li>
-        </ul>
-      </header>
+      <ul>
+        <a href="/search"><li>search</li></a>
+        <a href="/my_playlist"><li>my_playlist</li></a>
+        <a href="/"><li>map</li></a>
+      </ul>
+    </header>
       
       <!-- <img id="cover" src="/static/background.jpg"> -->
-
-      
-        
+ 
 
     {% endblock master %}
 
